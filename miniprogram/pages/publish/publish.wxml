@@ -1,1 +1,47 @@
-
+<view>
+  <form>
+    <view>请输入菜名</view>
+    <view>
+      <input bindinput="getFoodName" />
+    </view>
+    <view>请点击选择类别</view>
+    <picker bindchange="bindTypeChange" value="{{typeIndex}}" range="{{typeArray}}" class='type-picker'>
+      {{typeArray[typeIndex]}}
+    </picker>
+    <view>用料</view>
+    <view wx:for="{{materialArray}}" wx:key='index'>
+      <view>第{{item.materialNumber}}种用料</view>
+      <view>请输入用料的名称</view>
+      <view>
+        <input data-index="{{index}}" bindinput="getMaterialName" />
+      </view>
+      <view>请输入用料的用量</view>
+      <view>
+        <input data-index='{{index}}' bindinput="getMaterialDosage" />
+      </view>
+    </view>
+    <view class='button-view'>
+      <button bindtap="addMaterial">增加用料</button>
+      <button bindtap="deleteMaterial">删除用料</button>
+    </view>
+    <view>具体做法</view>
+    <view wx:for="{{stepArray}}" wx:key='index'>
+      <view>第{{item.step}}步</view>
+      <view>请输入文字</view>
+      <view>
+        <textarea auto-height='true' bindinput="getExplainWord" data-index='{{index}}'></textarea>
+      </view>
+      <view wx:if="{{!item.explainImage}}">请选择图片</view>
+      <view class='add-icon-view' bindtap="chooseImage" data-index='{{index}}' wx:if="{{!item.explainImage}}">
+        <image src='../../images/add.png' class='add-icon'></image>
+      </view>
+      <view wx:if="{{item.explainImage}}" class='explain-image-view'>
+        <image src='{{item.explainImage}}' class='explain-image' mode='aspectFit' bindtap='previewImage' data-index='{{index}}'></image>
+      </view>
+    </view>
+    <view class='button-view'>
+      <button bindtap="addStep">增加步骤</button>
+      <button bindtap="deleteStep">删除步骤</button>
+    </view>
+  </form>
+</view>

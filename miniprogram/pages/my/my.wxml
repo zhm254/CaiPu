@@ -1,1 +1,28 @@
-
+<view>
+  <view class='avatar-view'>
+    <image src='https://hbimg.b0.upaiyun.com/4ee0a73879ad24b45a1edd514e6cf0452f934c90a6f40-zNDNzu_fw658' class='avatar'></image>
+  </view>
+  <view class='nickname'>zhm</view>
+  <view class='my-publish'>
+    <view class='my-publish-left'>
+      <view>
+        <image src='../../images/publish.png' class='publish-icon'></image>
+      </view>
+      <view>我的发布</view>
+    </view>
+    <view>
+      <image src='../../images/arrowRight.png' class='arrowRight-icon'></image>
+    </view>
+  </view>
+  <view class='my-collection'>
+    <view class='my-collection-left'>
+      <view>
+        <image src='../../images/collection.png' class='collection-icon'></image>
+      </view>
+      <view>我的收藏</view>
+    </view>
+    <view>
+      <image src='../../images/arrowRight.png' class='arrowRight-icon'></image>
+    </view>
+  </view>
+</view>
