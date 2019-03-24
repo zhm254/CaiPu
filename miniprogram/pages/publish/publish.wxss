@@ -21,7 +21,7 @@ textarea {
 .add-icon-view {
   background-color: #f6f6f6;
   width: 100%;
-  height: 160rpx;
+  height: 200rpx;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,4 +40,30 @@ textarea {
 
 .explain-image {
   display: block;
+}
+
+.waibianju1 {
+  margin: 20rpx 0;
+}
+
+.waibianju2 {
+  margin: 0 0 30rpx;
+}
+
+.button-style {
+  width: 50%;
+  background-color: #1296db;
+  color: white;
+  margin: 0 10rpx;
+}
+
+.explain-word-view {
+  margin: 10rpx 0;
+}
+
+.publish-button {
+  width: 100%;
+  margin: 30rpx 0;
+  background-color: #f6f6f6;
+  color: #1296db;
 }
