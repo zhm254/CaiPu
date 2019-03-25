@@ -1,8 +1,10 @@
 {
   "pages": [
-    "pages/publish/publish",
     "pages/my/my",
-    "pages/home/home"
+    "pages/feedback/feedback",
+    "pages/publish/publish",
+    "pages/home/home",
+    "pages/aboutUs/aboutUs"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

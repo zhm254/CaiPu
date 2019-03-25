@@ -1,0 +1,11 @@
+.title {
+  text-align: center;
+  margin: 40rpx 0;
+}
+
+.text-view {
+  background-color: #f6f6f6;
+  border: 1 solid #f6f6f6;
+  padding: 30rpx;
+  text-align: center;
+}

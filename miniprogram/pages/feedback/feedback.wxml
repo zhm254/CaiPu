@@ -1,0 +1,7 @@
+<view>
+  <view class='title'>意见反馈</view>
+  <view>
+    <textarea placeholder='请输入你的意见' class='feedback-textarea' bindinput="getFeedback" value='{{feedback}}'></textarea>
+  </view>
+  <button class='button-style' bindtap='handleSubmit'>提交</button>
+</view>

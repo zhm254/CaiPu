@@ -1,21 +1,28 @@
-// miniprogram/pages/my/my.js
+// miniprogram/pages/feedback/feedback.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    feedback: ''
   },
-  goFeedback: function() {
-    wx.navigateTo({
-      url: '../feedback/feedback'
-    })
+  getFeedback: function(e) {
+    this.setData({
+      feedback: e.detail.value
+    });
   },
-  goAboutUs: function() {
-    wx.navigateTo({
-      url: '../aboutUs/aboutUs'
-    })
+  handleSubmit: function() {
+    if (this.data.feedback.trim()) {
+      wx.showToast({
+        title: '提交成功',
+        icon: 'success',
+        duration: 3000
+      })
+      this.setData({
+        feedback: ''
+      });
+    }
   },
   /**
    * 生命周期函数--监听页面加载
