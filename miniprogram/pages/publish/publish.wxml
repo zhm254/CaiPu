@@ -1,8 +1,8 @@
 <view>
-  <form>
+  <form bindsubmit='handlePublish'>
     <view class='waibianju1'>请输入菜名</view>
     <view>
-      <input bindinput="getFoodName" />
+      <input bindinput="getFoodName" value='{{foodName}}' />
     </view>
     <view class='waibianju1'>请点击选择类别</view>
     <picker bindchange="bindTypeChange" value="{{typeIndex}}" range="{{typeArray}}" class='type-picker'>
@@ -13,11 +13,11 @@
       <view>第{{item.materialNumber}}种用料</view>
       <view>请输入用料的名称</view>
       <view>
-        <input data-index="{{index}}" bindinput="getMaterialName" />
+        <input data-index="{{index}}" bindinput="getMaterialName" value='{{item.materialName}}' />
       </view>
       <view>请输入用料的用量</view>
       <view>
-        <input data-index='{{index}}' bindinput="getMaterialDosage" />
+        <input data-index='{{index}}' bindinput="getMaterialDosage" value='{{item.materialDosage}}' />
       </view>
     </view>
     <view class='button-view'>
@@ -29,7 +29,7 @@
       <view>第{{item.step}}步</view>
       <view>请输入文字</view>
       <view class='explain-word-view'>
-        <textarea auto-height='true' bindinput="getExplainWord" data-index='{{index}}'></textarea>
+        <textarea auto-height='true' bindinput="getExplainWord" data-index='{{index}}' value='{{item.explainWord}}'></textarea>
       </view>
       <view wx:if="{{!item.explainImage}}">请选择图片</view>
       <view class='add-icon-view' bindtap="chooseImage" data-index='{{index}}' wx:if="{{!item.explainImage}}">
@@ -43,6 +43,6 @@
       <button bindtap="addStep" class='button-style'>增加步骤</button>
       <button bindtap="deleteStep" class='button-style'>删除步骤</button>
     </view>
-    <button class='publish-button'>发布</button>
+    <button class='publish-button' form-type='submit'>发布</button>
   </form>
 </view>

@@ -1,4 +1,6 @@
-// miniprogram/pages/publish/publish.js
+import regeneratorRuntime from '../../lib/regenerator-runtime/runtime.js';
+wx.cloud.init();
+const db = wx.cloud.database();
 Page({
 
   /**
@@ -17,7 +19,7 @@ Page({
       step: 1,
       explainWord: '',
       explainImage: ''
-    }]
+    }],
   },
   bindTypeChange: function(e) {
     this.setData({
@@ -100,6 +102,89 @@ Page({
     wx.previewImage({
       urls: [this.data.stepArray[event.target.dataset.index].explainImage]
     })
+  },
+  async handlePublish() {
+    if (this.data.foodName.trim() === '') {
+      wx.showModal({
+        title: '提示',
+        content: '菜名不能为空',
+        showCancel: false
+      })
+      return;
+    }
+    for (var i = 0; i < this.data.materialArray.length; i++) {
+      if (this.data.materialArray[i].materialName.trim() === '' || this.data.materialArray[i].materialDosage.trim() === '') {
+        wx.showModal({
+          title: '提示',
+          content: '用料的名称和用料的用量不能为空',
+          showCancel: false
+        })
+        return;
+      }
+    }
+
+    for (var i = 0; i < this.data.stepArray.length; i++) {
+      if (this.data.stepArray[i].explainWord.trim() === '' || this.data.stepArray[i].explainImage === '') {
+        wx.showModal({
+          title: '提示',
+          content: '具体做法里的文字和图片不能为空',
+          showCancel: false
+        })
+        return;
+      }
+    }
+    for (var i = 0; i < this.data.stepArray.length; i++) {
+      await wx.cloud.uploadFile({
+        cloudPath: 'cloud' + this.data.stepArray[i].explainImage.slice(11),
+        filePath: this.data.stepArray[i].explainImage,
+      }).then(res => {
+        this.data.stepArray[i].explainImage = res.fileID;
+      }).catch(error => {
+        console.log(error);
+      })
+    }
+    
+
+
+
+
+    await db.collection('caiPu').add({
+      data: {
+        foodName: this.data.foodName,
+        foodtype: this.data.typeArray[this.data.typeIndex],
+        materialArray: this.data.materialArray,
+        stepArray: this.data.stepArray
+      },
+      success: (res) => {
+        
+
+        this.setData({
+          foodName: '',
+          typeIndex: 0,
+          materialArray: [{
+            materialNumber: 1,
+            materialName: '',
+            materialDosage: ''
+          }],
+          stepArray: [{
+            step: 1,
+            explainWord: '',
+            explainImage: ''
+          }],
+        })
+        wx.showToast({
+          title: '发布成功',
+          icon: 'success',
+          duration: 3000
+        })
+      },
+      fail: (err) => {
+        console.log(err);
+      }
+    })
+
+
+
   },
   /**
    * 生命周期函数--监听页面加载

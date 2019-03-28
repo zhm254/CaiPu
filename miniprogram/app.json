@@ -1,10 +1,15 @@
 {
   "pages": [
+    "pages/home/home",
+    "pages/publish/publish",
     "pages/my/my",
     "pages/feedback/feedback",
-    "pages/publish/publish",
-    "pages/home/home",
-    "pages/aboutUs/aboutUs"
+    "pages/aboutUs/aboutUs",
+    "pages/jccp/jccp",
+    "pages/zhcx/zhcx",
+    "pages/hp/hp",
+    "pages/gdxc/gdxc",
+    "pages/wgcp/wgcp"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

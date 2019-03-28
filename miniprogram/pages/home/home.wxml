@@ -1,1 +1,46 @@
-
+<view>
+  <view>
+    <swiper autoplay='true' indicator-dots='true' indicator-active-color='#1296DB' interval='2000' circular='true'>
+      <swiper-item>
+        <image src="../../images/img1.jpg" class='swiper-image' />
+      </swiper-item>
+      <swiper-item>
+        <image src="../../images/img2.jpg" class='swiper-image' />
+      </swiper-item>
+      <swiper-item>
+        <image src="../../images/img3.jpg" class='swiper-image' />
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class='food-type-title'>菜谱分类</view>
+  <view bindtap='goJccp'>
+    <view>
+      <image src='../../images/jccp.jpg' class='foodtype-image'></image>
+    </view>
+    <view class='food-type-text'>家常菜谱</view>
+  </view>
+  <view bindtap='goZhcx'>
+    <view>
+      <image src='../../images/zhcx.jpg' class='foodtype-image'></image>
+    </view>
+    <view class='food-type-text'>中华菜系</view>
+  </view>
+  <view bindtap='goHp'>
+    <view>
+      <image src='../../images/hp.jpg' class='foodtype-image'></image>
+    </view>
+    <view class='food-type-text'>烘焙</view>
+  </view>
+  <view bindtap='goGdxc'>
+    <view>
+      <image src='../../images/gdxc.jpg' class='foodtype-image'></image>
+    </view>
+    <view class='food-type-text'>各地小吃</view>
+  </view>
+  <view bindtap='goWgcp'>
+    <view>
+      <image src='../../images/wgcp.jpg' class='foodtype-image'></image>
+    </view>
+    <view class='food-type-text'>外国菜谱</view>
+  </view>
+</view>
