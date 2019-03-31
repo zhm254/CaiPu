@@ -13,31 +13,31 @@
     </swiper>
   </view>
   <view class='food-type-title'>菜谱分类</view>
-  <view bindtap='goJccp'>
+  <view bindtap='goTypeItems' data-typeItems='{{jccp}}'>
     <view>
       <image src='../../images/jccp.jpg' class='foodtype-image'></image>
     </view>
     <view class='food-type-text'>家常菜谱</view>
   </view>
-  <view bindtap='goZhcx'>
+  <view bindtap='goTypeItems' data-typeItems='{{zhcx}}'>
     <view>
       <image src='../../images/zhcx.jpg' class='foodtype-image'></image>
     </view>
     <view class='food-type-text'>中华菜系</view>
   </view>
-  <view bindtap='goHp'>
+  <view bindtap='goTypeItems' data-typeItems='{{hp}}'>
     <view>
       <image src='../../images/hp.jpg' class='foodtype-image'></image>
     </view>
     <view class='food-type-text'>烘焙</view>
   </view>
-  <view bindtap='goGdxc'>
+  <view bindtap='goTypeItems' data-typeItems='{{gdxc}}'>
     <view>
       <image src='../../images/gdxc.jpg' class='foodtype-image'></image>
     </view>
     <view class='food-type-text'>各地小吃</view>
   </view>
-  <view bindtap='goWgcp'>
+  <view bindtap='goTypeItems' data-typeItems='{{wgcp}}'>
     <view>
       <image src='../../images/wgcp.jpg' class='foodtype-image'></image>
     </view>

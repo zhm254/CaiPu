@@ -1,18 +1,31 @@
-// miniprogram/pages/zhcx/zhcx.js
+// miniprogram/pages/typeItems/typeItems.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    typeItems: []
   },
-
+  goItem: function(e) {
+    wx.navigateTo({
+      url: '../item/item?item=' + JSON.stringify(e.currentTarget.dataset.item)
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log(JSON.parse(options.zhcx))
+    if (this.data.typeItems != []) {
+      this.data.typeItems = [];
+      this.setData({
+        typeItems: this.data.typeItems
+      });
+    }
+    this.data.typeItems = JSON.parse(options.typeItems);
+    this.setData({
+      typeItems: this.data.typeItems
+    });
   },
 
   /**

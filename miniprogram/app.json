@@ -5,11 +5,8 @@
     "pages/my/my",
     "pages/feedback/feedback",
     "pages/aboutUs/aboutUs",
-    "pages/jccp/jccp",
-    "pages/zhcx/zhcx",
-    "pages/hp/hp",
-    "pages/gdxc/gdxc",
-    "pages/wgcp/wgcp"
+    "pages/typeItems/typeItems",
+    "pages/item/item"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

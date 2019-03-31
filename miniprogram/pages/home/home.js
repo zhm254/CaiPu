@@ -1,7 +1,6 @@
 wx.cloud.init();
 const db = wx.cloud.database();
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -12,10 +11,10 @@ Page({
     gdxc: [],
     wgcp: []
   },
-  goJccp: function() {
-    if (this.data.jccp != []) {
+  goTypeItems: function(e) {
+    if (e.currentTarget.dataset.typeitems != []) {
       wx.navigateTo({
-        url: '../jccp/jccp?jccp=' + JSON.stringify(this.data.jccp)
+        url: '../typeItems/typeItems?typeItems=' + JSON.stringify(e.currentTarget.dataset.typeitems)
       })
     } else {
       wx.showModal({
@@ -24,61 +23,8 @@ Page({
         showCancel: false
       })
     }
+  },
 
-  },
-  goZhcx: function() {
-    if (this.data.zhcx != []) {
-      wx.navigateTo({
-        url: '../zhcx/zhcx?zhcx=' + JSON.stringify(this.data.zhcx)
-      })
-    } else {
-      wx.showModal({
-        title: '提示',
-        content: '该类别暂无项目',
-        showCancel: false
-      })
-    }
-
-  },
-  goHp: function() {
-    if (this.data.hp != []) {
-      wx.navigateTo({
-        url: '../hp/hp?hp=' + JSON.stringify(this.data.hp)
-      })
-    } else {
-      wx.showModal({
-        title: '提示',
-        content: '该类别暂无项目',
-        showCancel: false
-      })
-    }
-  },
-  goGdxc: function() {
-    if (this.data.gdxc != []) {
-      wx.navigateTo({
-        url: '../gdxc/gdxc?gdxc=' + JSON.stringify(this.data.gdxc)
-      })
-    } else {
-      wx.showModal({
-        title: '提示',
-        content: '该类别暂无项目',
-        showCancel: false
-      })
-    }
-  },
-  goWgcp: function() {
-    if (this.data.wgcp != []) {
-      wx.navigateTo({
-        url: '../wgcp/wgcp?wgcp=' + JSON.stringify(this.data.wgcp)
-      })
-    } else {
-      wx.showModal({
-        title: '提示',
-        content: '该类别暂无项目',
-        showCancel: false
-      })
-    }
-  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -104,7 +50,6 @@ Page({
         this.setData({
           jccp: res.data
         });
-        console.log(this.data.jccp);
       }
     })
     db.collection('caiPu').where({
@@ -114,7 +59,6 @@ Page({
         this.setData({
           zhcx: res.data
         });
-        console.log(this.data.zhcx);
       }
     })
     db.collection('caiPu').where({
@@ -124,7 +68,6 @@ Page({
         this.setData({
           hp: res.data
         });
-        console.log(this.data.hp);
       }
     })
     db.collection('caiPu').where({
@@ -134,7 +77,6 @@ Page({
         this.setData({
           gdxc: res.data
         });
-        console.log(this.data.gdxc);
       }
     })
     db.collection('caiPu').where({
@@ -144,7 +86,6 @@ Page({
         this.setData({
           wgcp: res.data
         });
-        console.log(this.data.wgcp);
       }
     })
   },

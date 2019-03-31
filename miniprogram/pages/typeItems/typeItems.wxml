@@ -1,0 +1,7 @@
+<view class='type-name'>{{typeItems[0].foodtype}}</view>
+<view wx:for="{{typeItems}}" wx:key="index" bindtap='goItem' data-item='{{item}}'>
+  <view>
+    <image src='{{item.stepArray[item.stepArray.length-1].explainImage}}' class='item-image'></image>
+  </view>
+  <view class='item-name'>{{item.foodName}}</view>
+</view>

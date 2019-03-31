@@ -122,7 +122,6 @@ Page({
         return;
       }
     }
-
     for (var i = 0; i < this.data.stepArray.length; i++) {
       if (this.data.stepArray[i].explainWord.trim() === '' || this.data.stepArray[i].explainImage === '') {
         wx.showModal({
@@ -143,11 +142,6 @@ Page({
         console.log(error);
       })
     }
-    
-
-
-
-
     await db.collection('caiPu').add({
       data: {
         foodName: this.data.foodName,
@@ -156,8 +150,6 @@ Page({
         stepArray: this.data.stepArray
       },
       success: (res) => {
-        
-
         this.setData({
           foodName: '',
           typeIndex: 0,
@@ -182,9 +174,6 @@ Page({
         console.log(err);
       }
     })
-
-
-
   },
   /**
    * 生命周期函数--监听页面加载

@@ -1,18 +1,30 @@
-// miniprogram/pages/wgcp/wgcp.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    item: {}
   },
-
+  previewImage: function(e) {
+    wx.previewImage({
+      urls: [e.currentTarget.dataset.explainimage]
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log(JSON.parse(options.wgcp))
+    if (this.data.item != {}) {
+      this.data.item = {}
+      this.setData({
+        item: this.data.item
+      })
+    }
+    this.data.item = JSON.parse(options.item);
+    this.setData({
+      item: this.data.item
+    });
   },
 
   /**

@@ -1,0 +1,29 @@
+.item {
+  margin-bottom: 60rpx;
+}
+
+.title {
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #1296db;
+  font-weight: bolder;
+}
+
+.material {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.step-image {
+  width: 100%;
+  height: 400rpx;
+  display: block;
+}
+
+.step-word {
+  padding: 20rpx 0;
+}

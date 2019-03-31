@@ -1,0 +1,15 @@
+<view class='item'>
+  <view class='title'>{{item.foodName}}</view>
+  <view class='title'>所需用料</view>
+  <view class='material' wx:for="{{item.materialArray}}" wx:key='index'>
+    <view>{{item.materialName}}</view>
+    <view>{{item.materialDosage}}</view>
+  </view>
+  <view class='title'>制作步骤</view>
+  <view wx:for="{{item.stepArray}}" wx:key='index'>
+    <view bindtap='previewImage' data-explainImage='{{item.explainImage}}'>
+      <image src='{{item.explainImage}}' class='step-image'></image>
+    </view>
+    <view class='step-word'>{{item.step}}、{{item.explainWord}}</view>
+  </view>
+</view>
