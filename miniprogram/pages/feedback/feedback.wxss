@@ -1,6 +1,7 @@
 .title {
   text-align: center;
   margin: 20rpx 0;
+  color: #1296db;
 }
 
 .feedback-textarea {
