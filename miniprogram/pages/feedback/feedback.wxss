@@ -7,7 +7,7 @@
 .feedback-textarea {
   height: 400rpx;
   width: 100%;
-  border: 1px solid gray;
+  border: 2rpx solid gray;
   padding: 10rpx;
 }
 

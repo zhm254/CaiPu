@@ -6,7 +6,7 @@
 
 .text-view {
   background-color: #f6f6f6;
-  border: 1 solid #f6f6f6;
+  border: 2rpx solid #f6f6f6;
   padding: 30rpx;
   text-align: center;
 }
