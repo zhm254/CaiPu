@@ -132,6 +132,9 @@ Page({
         return;
       }
     }
+    wx.showLoading({
+      title: '发布中...',
+    })
     for (var i = 0; i < this.data.stepArray.length; i++) {
       await wx.cloud.uploadFile({
         cloudPath: 'cloud' + this.data.stepArray[i].explainImage.slice(11),

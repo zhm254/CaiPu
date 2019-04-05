@@ -22,6 +22,12 @@ Page({
       this.setData({
         feedback: ''
       });
+    } else if (!this.data.feedback.trim()) {
+      wx.showToast({
+        title: '请输入你的意见',
+        icon: 'none',
+        duration: 3000
+      })
     }
   },
   /**
